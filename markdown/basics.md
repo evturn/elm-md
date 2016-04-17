@@ -60,3 +60,20 @@ records
   |> filter (isOver 100)
   |> sum
 ```
+
+#### Type variables
+
+This function takes a string and an array of strings and returns the index where the given string was found in the array or -1 if not found.
+```elm
+indexOf : String -> Array String -> Int
+```
+
+Here `String` is replaced with `a` and the signature of `indexOf` now takes a value of any type `a` and an array of that same type `a` and returns an integer.
+
+```elm
+indexOf : a -> Array a -> Int
+```
+
+Now states `indexOf` takes a value of any type `a` and an array of that same type `a` and returns an integer.
+
+This is valid As long as types match.
