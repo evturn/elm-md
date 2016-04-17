@@ -1,4 +1,4 @@
-## Elm - Basics
+## Elm - Basics | Functions
 
 #### `main`
 
@@ -77,3 +77,36 @@ indexOf : a -> Array a -> Int
 Now states `indexOf` takes a value of any type `a` and an array of that same type `a` and returns an integer.
 
 This is valid As long as types match.
+
+```elm
+switch : ( a, b ) -> ( b, a )
+switch ( x, y ) =
+  ( y, x )
+
+switch (1, 2)
+switch ("A", 2)
+switch (1, ["B"])
+```
+
+#### Functions as Arguments
+
+* This declares that `map` takes a function being `(Int -> String)`
+* A list of integers
+* Returns a list of strings
+
+```elm
+map : (Int -> String) -> List Int -> List String
+```
+
+The function provided to `map` must conform to the `(Int -> String)` signature.
+
+```elm
+map toString [1, 2, 3]
+```
+
+More commonly signatures use stand-ins instead of types that specific:
+
+```elm
+map : (a -> b) -> List a -> List b
+```
+
