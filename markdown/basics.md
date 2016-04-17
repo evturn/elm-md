@@ -25,3 +25,38 @@ The function is called like this:
 ```elm
 add 1 2
 ```
+
+Parentheses are needed when you call a function with the result of another function call.
+
+```elm
+add 1 (divide 12 3)
+```
+
+##### The Pipe Operator
+
+```elm
+add 1 (multiply 2 3)
+```
+
+With the pipe operator looks like:
+
+```elm
+3
+  |> multiply 2
+  |> add 1
+```
+
+With a more complex example:
+
+```elm
+sum (filter (isOver 100) (map getCost records))
+```
+
+becomes:
+
+```elm
+records
+  |> map getCost
+  |> filter (isOver 100)
+  |> sum
+```
